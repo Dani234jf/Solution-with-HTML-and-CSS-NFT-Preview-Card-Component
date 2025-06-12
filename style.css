@@ -1,0 +1,131 @@
+
+:root {
+  --primary-blue-500: hsl(215, 51%, 70%);
+  --primary-cyan-400: hsl(178, 100%, 50%);
+
+  --neutral-bg-blue-950: hsl(217, 54%, 11%);
+  --neutral-bg-blue-900: hsl(216, 50%, 16%);
+  --neutral-blue-800: hsl(215, 32%, 27%);
+  --neutral-white: hsl(0, 0%, 100%);
+}
+
+
+/* css reset */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+
+/* page styles */
+
+
+html {
+  background-color: var(--neutral-bg-blue-950);
+  block-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "outfit", sans-serif;
+  color: var(--primary-blue-500);
+  line-height: 1.5em;
+  font-weight: 300;
+  font-size: 1.125rem;
+  padding: 1rem;
+}
+
+h1 {
+  color: var(--neutral-white);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+hr {
+  border-color: var(--primary-blue-500);
+}
+
+
+/* component styles */
+
+
+.card {
+  max-inline-size: 28rem;
+  padding: 1.5rem;
+  background-color: var(--neutral-bg-blue-900);
+  border-radius: 1rem;
+  display: grid;
+  gap: 1.25rem;
+  
+  .creator-name {
+    color: var(--neutral-white);
+  }
+
+  h1, .creator-name {
+    cursor: pointer;
+    &:hover {
+      color: var(--primary-cyan-400);
+    }
+  }
+
+  .card-img {
+    position: relative;
+    & > :first-child {
+      position: absolute;
+      inset: 0;
+      background-color: hsl(178, 100%, 50%, 0.5);
+      border-radius: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity 0.15s ease;
+      }
+      & > * {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+  }
+
+  .img-avatar {
+    aspect-ratio: 1;
+    border-radius: 99vw;
+    inline-size: 2.5rem;
+    outline: 1px solid white;
+    margin-right: 0.75rem;
+  }
+
+  .NFT-image {
+    border-radius: 0.5rem;
+  }
+
+  .NFT-value {
+    color: var(--primary-cyan-400);
+  }
+  
+  .NFT-details, .NFT-creator {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .icon-clock {
+    margin-left: auto;
+  }
+
+}
